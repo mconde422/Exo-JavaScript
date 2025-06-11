@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculatrice.css">
+    <title>Projet mini calculatrice</title>
+</head>
+<body>
+    
+    <div class="calculatrice">
+
+        <p id="entrer">0</p>
+
+        <div class="num">
+        
+            <div class="c1">
+                <button type="button" class="b b1" onclick="updatecalculate('1')">1</button>
+                <button type="button" class="b b2" onclick="updatecalculate('2')">2</button>
+                <button type="button" class="b b3" onclick="updatecalculate('3')">3</button>
+        
+                <button type="button" class="b b4" onclick="updatecalculate('4')">4</button>
+                <button type="button" class="b b5" onclick="updatecalculate('5')">5</button>
+                <button type="button" class="b b6" onclick="updatecalculate('6')">6</button>
+            
+                <button type="button" class="b b7" onclick="updatecalculate('7')">7</button>
+                <button type="button" class="b b8" onclick="updatecalculate('8')">8</button>
+                <button type="button" class="b b9" onclick="updatecalculate('9')">9</button>
+
+                <div class="zero">
+                    <button type="button" class="b bv" onclick="updatecalculate('.')">.</button>
+                    <button type="button" class="b b0" onclick="updatecalculate('0')">0</button>
+                </div>
+            </div>
+
+            <div class="c2">
+
+                <div class="clear">
+                <button type="button" class="b bv" onclick="updatecalculate('')">C-ALL</button>
+                <button type="button" class="b b0" onclick="calculateur = calculateur.slice(0, -1); document.getElementById('entrer').innerHTML = calculateur;">C</button>
+                <button type="button" class="b b0" onclick="calculateur +='('; document.getElementById('entrer').innerHTML = calculateur;">(</button>
+                <button type="button" class="b b0" onclick="calculateur +=')'; document.getElementById('entrer').innerHTML = calculateur;">)</button>
+                <button type="button" class="b b0" onclick="updatecalculate('+')">+</button>
+                <button type="button" class="b b0" onclick="updatecalculate('-')">-</button>
+                <button type="button" class="b b0" onclick="updatecalculate('*')">*</button>
+                <button type="button" class="b b0" onclick="updatecalculate('/')">/</button>
+                    </div>
+
+                <button type="button" class="egal" onclick="updateresul()">=</button>
+            </div>
+
+        </div>
+    </div>    
+    
+
+    <SCRipt>
+        let calculateur = ""
+        
+        function updatecalculate(value) {
+            calculateur += value;
+            document.getElementById('entrer').innerHTML = calculateur
+        }
+
+        function updateresul() {
+            calculateur = eval(calculateur)
+            document.getElementById('entrer').innerHTML = calculateur
+        }
+    </SCRipt>
+</body>
+</html>
