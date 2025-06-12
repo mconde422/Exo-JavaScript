@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo 5C</title>
+</head>
+<body>
+
+    <button class="pile">Pile</button> <br> <br>
+    <button class="face">Face</button>
+    <p class="p"></p>
+
+    <script>
+        const pile = document.querySelector('.pile')
+        const face = document.querySelector('.face')
+        const p = document.querySelector('.p')
+
+        pile.addEventListener('click', () => {
+            p.innerHTML = 'Pile'
+        }) 
+            face.addEventListener('click', () => {
+            p.innerHTML = 'Face'
+        }) 
+    </script>
+</body>
+</html>

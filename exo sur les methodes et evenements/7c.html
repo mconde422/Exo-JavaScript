@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo 7c</title>
+</head>
+<body>
+    <p>Appuez sur la touche 'a'</p>
+
+    <script>
+        const input = document.querySelector('body')
+
+        input.addEventListener('keypress', (e) => {
+            if (e.key ==='a') {
+                alert('Bravo vous avez gagné !')
+            } else {
+                alert('Désolé, ce n\'est pas la bonne touche. Essayez encore !')
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo 6a</title>
+</head>
+<body>
+
+    <input type="text" placeholder="votre nom">
+    <input type="submit" value="Soumettre" id="btn"><br>
+    <p></p>
+
+    <script>
+       const input = document.querySelector('input[type="text"]')
+       const btn2 = document.getElementById('btn')
+       const p = document.querySelector('p')
+
+       
+        input.onkeypress = (e) => {
+            if (e.key === 'Enter') {
+                if (input.value === '') {
+                    p.innerHTML = 'Veuillez saisir une valeur'
+                } else {
+                    p.innerHTML = `Votre nom est: ${input.value}`
+                }
+            }            
+        }
+
+        btn2.addEventListener('click', () =>{
+            if (input.value === ''){
+                p.innerHTML = 'Veuillez saisir une valeur'
+            } else {
+                p.innerHTML =`Votre nom est: ${input.value}`
+            }
+        })
+    </script>
+</body>
+</html>
