@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9a</title>
+</head>
+<body>
+    <form action="post">
+
+        <label for="nom">pseudo<input type="text" name="nom" id="nom" placeholder="Entrer votre Nom" required></label><br> <br>
+        <label for="email">Email<input type="email" name="email" id="email" placeholder="Entrer votre e-mail" required></label> <br> <br>
+
+        <input type="submit" value="Envoyer" id="submit">
+
+    </form>
+    <div class="ajout"></div>
+    
+
+
+    <script>
+        const envoyer = document.querySelector('form')
+        let namec = document.querySelector('#nom')
+        let mailc = document.querySelector('#email')
+        let email = ''
+        let nom = ''
+
+        mailc.addEventListener('input', (e) => {
+            email = e.target.value
+        })
+        namec.addEventListener('input', (e) => {
+            nom = e.target.value
+        })
+
+        envoyer.addEventListener('click', (e) => {
+            e.preventDefault()
+            document.querySelector('.ajout').innerHTML = `
+            Le mail est : ${email} <br>
+            Le nom est : ${nom}
+            `
+            console.log(`${email} / ${nom}`);
+            
+        })
+    </script>
+</body>
+</html>

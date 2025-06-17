@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9c</title>
+</head>
+<body>
+    <form action="post">
+        <select name="select" id="select">
+            <option value="">choisi une couleur</option>
+            <option value="red">Rouge</option>
+            <option value="green">Vert</option>
+            <option value="blue">Bleu</option>
+        </select>
+    </form>
+
+    <script>
+        const sel = document.querySelector('select')
+        sel.addEventListener('change', (d) => {
+            document.querySelector('body').style.background = d.target.value
+            console.log(`Vous avez choisi la couleur ${d.target.value}`);
+            
+        })
+
+    </script>
+</body>
+</html>

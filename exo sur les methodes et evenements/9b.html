@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9b</title>
+</head>
+<body>
+    <form action="post">
+
+        <label for="pass">Taper votre mot de pass :</label> <input type="password" id="pass">
+        <p class="taper"></p>
+        <input type="checkbox" id="affiche"><label for="affiche" class="lab">Afficher le mot de pass</label><br><br>
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+
+        const inpass = document.querySelector("#pass")
+        const incheck = document.querySelector("#affiche")
+        const btn = document.querySelector("button")
+
+        inpass.addEventListener('focus', () => {
+            document.querySelector('p').innerHTML = 'Tapper votre mot de  pass !'
+            document.querySelector('p').style.color = 'red'
+        })
+        inpass.addEventListener('blur', () => {
+            document.querySelector('p').innerHTML = 'Champ quitté !'
+            document.querySelector('p').style.color = '#000'
+        })
+
+        incheck.addEventListener('click', () => {
+            if (inpass.type === "password") {
+                inpass.type = 'text'
+                document.querySelector('.lab').innerHTML = 'Masquer le mot de pass'
+            } else if (inpass.type === "text") {
+                inpass.type = 'password'
+                document.querySelector('.lab').innerHTML = 'Afficher le mot de pass !'
+            }
+        })
+        btn.addEventListener('click', (e)=> {
+            e.preventDefault()
+        })
+
+    </script>
+</body>
+</html>
