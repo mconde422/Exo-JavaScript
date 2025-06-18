@@ -169,7 +169,6 @@
         window.addEventListener('scroll', (e)=> {
             let scroll = window.scrollY
             let pourcent = (scroll / window.innerHeight) * 100
-            console.log(Math.round(pourcent) + " % ")
             if (Math.round(pourcent)<20){
                 body.style.background = 'white'
             } else if (Math.round(pourcent)<40){
