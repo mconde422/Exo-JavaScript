@@ -74,3 +74,5 @@ fetch('https://api.exemple.com/ressources')
   .catch(error => {
     console.error("Erreur lors du fetch :", error);
   });
+
+<img src="API/convertisseur.png" alt="capture d'ecran" width="400" height="200"/>
